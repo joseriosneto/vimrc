@@ -44,8 +44,8 @@ set ruler           " cursor current position in status line
 set cc=80
 
 """"""" Tabs
-nnoremap <S-Right> :tabnext<CR>
-nnoremap <S-Left>  :tabprevious<CR>
+nnoremap <S-l> :tabnext<CR>
+nnoremap <S-h>  :tabprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         PLUGINS                          "
