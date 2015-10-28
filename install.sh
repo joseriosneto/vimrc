@@ -7,3 +7,6 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 # Fugitive
 mkdir -p ~/.vim/bundle && \
           git clone https://github.com/tpope/vim-fugitive ~/.vim/bundle/vim-fugitive
+
+# TagBar
+git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
