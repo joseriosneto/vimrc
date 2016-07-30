@@ -67,4 +67,4 @@ set splitright " split tags in a right window
 
 """"""" Git
 nnoremap <F5> :Gblame<CR>
-nnoremap <F6> :Gdiff<CR>
+nnoremap <F4> :Gvdiff<CR>
