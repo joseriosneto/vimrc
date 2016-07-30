@@ -17,6 +17,9 @@ syntax on
 set nonumber
 set nowrap
 set background=dark
+set hlsearch
+set ignorecase
+set smartcase  " It needs ignorecase on
 
 """"""" Tabulation
 set autoindent
