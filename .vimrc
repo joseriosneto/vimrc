@@ -55,6 +55,7 @@ nnoremap <S-h>  :tabprevious<CR>
 execute pathogen#infect()
 
 """"""" Ctags
+set tags=./tags;/
 nnoremap <F8> :TagbarToggle<CR>
 
 """"""" Cscope
