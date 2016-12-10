@@ -46,6 +46,12 @@ set laststatus=2
 set ruler           " cursor current position in status line
 set cc=80
 
+""""""" Windows
+nnoremap <space>h :wincmd h<CR>
+nnoremap <space>j :wincmd j<CR>
+nnoremap <space>k :wincmd k<CR>
+nnoremap <space>l :wincmd l<CR>
+
 """"""" Tabs
 "nnoremap <C-l> :tabnext<CR>
 "nnoremap <C-h>  :tabprevious<CR>
