@@ -37,7 +37,7 @@ set incsearch  " incremental search while typping
 " setting meta8 in urxvt. I am sticking with this solution for now
 " but I am not sure yet how it will cope with others terminals and
 " platforms.
-nnoremap <Char-27><Char-12> :nohl<CR>
+nnoremap <silent> <Char-27><Char-12> :nohl<CR>
 
 """"""" Folding
 set foldmethod=syntax
