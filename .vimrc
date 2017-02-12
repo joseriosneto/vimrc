@@ -21,7 +21,6 @@ set hlsearch
 set ignorecase
 set smartcase  " It needs ignorecase on
 set cursorline " highlight current line
-set termencoding=latin1 " latin1 to make urxvt understand the Alt key
 
 """"""" Tabulation
 set autoindent
@@ -30,9 +29,15 @@ set shiftwidth=4
 set expandtab
 
 """"""" Search
+set hlsearch
 set incsearch  " incremental search while typping
 
-nnoremap <silent> <C-A-l> :nohl<CR>
+" It turns out that it is harder to use the Alt key in urxvt+vim
+" than I first thought. I lost the terminal shortcuts using Alt just
+" setting meta8 in urxvt. I am sticking with this solution for now
+" but I am not sure yet how it will cope with others terminals and
+" platforms.
+nnoremap <Char-27><Char-12> :nohl<CR>
 
 """"""" Folding
 set foldmethod=syntax
