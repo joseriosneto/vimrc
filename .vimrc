@@ -20,6 +20,7 @@ set background=dark
 set hlsearch
 set ignorecase
 set smartcase  " It needs ignorecase on
+set cursorline " highlight current line
 
 """"""" Tabulation
 set autoindent
