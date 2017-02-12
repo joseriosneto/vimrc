@@ -21,6 +21,7 @@ set hlsearch
 set ignorecase
 set smartcase  " It needs ignorecase on
 set cursorline " highlight current line
+set termencoding=latin1 " latin1 to make urxvt understand the Alt key
 
 """"""" Tabulation
 set autoindent
@@ -31,7 +32,7 @@ set expandtab
 """"""" Search
 set incsearch  " incremental search while typping
 
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-A-l> :nohl<CR>
 
 """"""" Folding
 set foldmethod=syntax
@@ -48,10 +49,10 @@ set ruler           " cursor current position in status line
 set cc=80
 
 """"""" Windows
-nnoremap <space>h :wincmd h<CR>
-nnoremap <space>j :wincmd j<CR>
-nnoremap <space>k :wincmd k<CR>
-nnoremap <space>l :wincmd l<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 
 """"""" Tabs
 "nnoremap <C-l> :tabnext<CR>
