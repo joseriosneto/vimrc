@@ -21,6 +21,8 @@ set hlsearch
 set ignorecase
 set smartcase  " It needs ignorecase on
 set cursorline " highlight current line
+set scrolloff=6 " scrolls when cursor gets 6 lines close to top/bottom edges
+set sidescrolloff=6 " scrolls when cursor gets 6 lines close to left/right edges
 
 """"""" Tabulation
 set autoindent
