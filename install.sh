@@ -5,10 +5,22 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
           curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Fugitive
-git clone https://github.com/tpope/vim-fugitive ~/.vim/bundle/vim-fugitive
+FUG_HOME=~/.vim/bundle/vim-fugitive
+if [  ! -d $FUG_HOME  ]
+then
+    git clone https://github.com/tpope/vim-fugitive $FUG_HOME
+fi
 
 # TagBar
-git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
+TAGB_HOME=~/.vim/bundle/tagbar
+if [  ! -d $TAGB_HOME  ]
+then
+    git clone https://github.com/majutsushi/tagbar $TAGB_HOME
+fi
 
 # Surround.vim
-git clone git://github.com/tpope/vim-surround ~/.vim/bundle/vim-surround
+SURR_HOME=~/.vim/bundle/vim-surround
+if [  ! -d $SURR_HOME  ]
+then
+    git clone git://github.com/tpope/vim-surround $SURR_HOME
+fi
