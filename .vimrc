@@ -62,12 +62,6 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
-""""""" Windows
-nnoremap <silent> <A-h> :wincmd h<CR>
-nnoremap <silent> <A-j> :wincmd j<CR>
-nnoremap <silent> <A-k> :wincmd k<CR>
-nnoremap <silent> <A-l> :wincmd l<CR>
-
 """"""" Tabs
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
