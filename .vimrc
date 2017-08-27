@@ -12,45 +12,8 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
-""""""" EXPERIMENTAL. IF I LIKE IT, THEN MOVE IT SOMEWHERE ELSE MORE APPROPRIATED
+""""""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
 let mapleader = ","
-set showmatch " Jump to the matching bracket when inserting a bracket
-" select word
-noremap <space> viw
-" delete line in normal mode
-nnoremap <leader>d dd
-" delete line in ins mode
-inoremap <leader>d <esc>ddi
-" change current word to uppercase in normal mode
-nnoremap <leader>u viwUe
-" change current word to uppercase in ins mode
-inoremap <leader>u <esc>viwUea
-" change current word to uppercase in ins mode
-inoremap <leader>U <esc>viwuea
-" quickly open my vimrc
-nnoremap <leader>ev :vsp $HOME/.vimrc<cr>
-" quickly source my vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-" quickly create if
-iabbrev if() if () {<cr><cr>}<esc>=
-" quickly create ifelse
-iabbrev ifelse() if () {<cr><cr>} else {<cr><cr>}<esc>=
-" quickly create for
-iabbrev fori() for (int i = 0; i < XXX; ++i) {<cr><cr>}<esc>=
-" surround quotes in word in normal mode. REMOVE vim-surround?
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>el
-" surround single quotes in word in normal mode. REMOVE vim-surround?
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>el
-" surround quotes in word in visual mode. REMOVE vim-surround?
-vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
-" surround single quotes in word in visual mode. REMOVE vim-surround?
-vnoremap <leader>' <esc>`<i'<esc>`>la'<esc>
-" mapping <esc> to something easier. CHECK WHETHER HELPS MORE THAN DISTURBS
-" inoremap jk <esc>
-" inoremap <esc> <nop>
-
-
-""""""" Basic
 syntax on
 set nonumber
 set nowrap
@@ -61,12 +24,20 @@ set smartcase  " It needs ignorecase on
 set cursorline " highlight current line
 set scrolloff=6 " scrolls when cursor gets 6 lines close to top/bottom edges
 set sidescrolloff=6 " scrolls when cursor gets 6 lines close to left/right edges
+set showmatch " Jump to the matching bracket when inserting a bracket
+
+" Returning from ins mode quicker
+inoremap jk <esc>
+inoremap <esc> <nop>
+
+" Delete line in ins mode
+inoremap <leader>d <esc>ddi
+
+" Quickly open/source vimrc
+nnoremap <leader>ev :vsp $HOME/.vimrc<CR>
+nnoremap <leader>sv :source $HOME/.vimrc<CR>
 
 """"""" Searching
-" Allow recursive search in subdirectories. This might need to be improved
-" according to the project. One could use, for instance, /src/*/plugins/**
-" to filter the scope of the search.
-set path+=**
 set wildmenu
 set wildmode=list:full
 
@@ -80,12 +51,7 @@ set expandtab
 set hlsearch
 set incsearch  " incremental search while typping
 
-" It turns out that it is harder to use the Alt key in urxvt+vim
-" than I first thought. I lost the terminal shortcuts using Alt just
-" setting meta8 in urxvt. I am sticking with this solution for now
-" but I am not sure yet how it will cope with others terminals and
-" platforms.
-nnoremap <silent> <Char-27><Char-12> :nohl<CR>
+nnoremap <silent> <C-l> :nohl<CR>
 
 """"""" Folding
 set foldmethod=syntax
@@ -96,11 +62,6 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
-""""""" Nice
-set laststatus=2
-set ruler           " cursor current position in status line
-set cc=80
-
 """"""" Windows
 nnoremap <silent> <A-h> :wincmd h<CR>
 nnoremap <silent> <A-j> :wincmd j<CR>
@@ -108,8 +69,18 @@ nnoremap <silent> <A-k> :wincmd k<CR>
 nnoremap <silent> <A-l> :wincmd l<CR>
 
 """"""" Tabs
-"nnoremap <C-l> :tabnext<CR>
-"nnoremap <C-h>  :tabprevious<CR>
+nnoremap <Left>  :tabprevious<CR>
+nnoremap <Right> :tabnext<CR>
+
+""""""" Nice
+set laststatus=2
+set ruler           " cursor current position in status line
+set cc=80
+
+" Spell checker for *.txt,*md files
+au FileType *.txt :setlocal spell spelllang=en_us
+au FileType *.md :setlocal spell spelllang=en_us
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         PLUGINS                          "
