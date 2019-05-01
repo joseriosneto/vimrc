@@ -82,8 +82,11 @@ set ruler           " cursor current position in status line
 set cc=80
 
 " Spell checker for *.txt,*md files
-au FileType *.txt :setlocal spell spelllang=en_us
-au FileType *.md :setlocal spell spelllang=en_us
+filetype on
+augroup spell_check
+    autocmd!
+    au FileType text,markdown :setlocal spell spelllang=en_us
+augroup end
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
