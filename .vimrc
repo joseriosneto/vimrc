@@ -12,6 +12,12 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
+""""""""""""""""""""""" EXPERIMENTAL""""""""""""""""""""""""
+iabbrev ife if () {<cr>} else {<cr>}
+iabbrev ifeif if () {<cr>} else if () {<cr>}
+iabbrev fori for (int i = 0; i < 1000; ++i) {<cr>}
+iabbrev forj for (int j = 0; j < 1000; ++j) {<cr>}
+
 """"""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
 let mapleader = ","
 syntax on
