@@ -28,6 +28,7 @@ set background=light
 set scrolloff=6 " scrolls when cursor gets 6 lines close to top/bottom edges
 set sidescrolloff=6 " scrolls when cursor gets 6 lines close to left/right edges
 set showmatch " Jump to the matching bracket when inserting a bracket
+set grepprg=rg
 
 " Returning from ins mode quicker
 inoremap jk <esc>
