@@ -23,11 +23,8 @@ let mapleader = ","
 syntax on
 set nonumber
 set nowrap
-set background=dark
-set hlsearch
-set ignorecase
-set smartcase  " It needs ignorecase on
-set cursorline " highlight current line
+set background=light
+" set cursorline " highlight current line
 set scrolloff=6 " scrolls when cursor gets 6 lines close to top/bottom edges
 set sidescrolloff=6 " scrolls when cursor gets 6 lines close to left/right edges
 set showmatch " Jump to the matching bracket when inserting a bracket
@@ -44,20 +41,26 @@ nnoremap <leader>ev :vsp $HOME/.vimrc<CR>
 nnoremap <leader>sv :source $HOME/.vimrc<CR>
 
 """"""" Searching
+set ignorecase
+set smartcase  " note: it needs ignorecase on
+set hlsearch
+set incsearch  " incremental search while typping
 set wildmenu
 set wildmode=list:full
+
+" Clear search highlight
+nnoremap <silent> <C-l> :nohl<CR>
+
+" Highlight word without searching
+:nnoremap <buffer> <space> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 """"""" Tabulation
 set autoindent
 set tabstop=4
 set shiftwidth=4
+" round indent to multiple of 'shiftwidth'
+set shiftround
 set expandtab
-
-""""""" Search
-set hlsearch
-set incsearch  " incremental search while typping
-
-nnoremap <silent> <C-l> :nohl<CR>
 
 """"""" Folding
 set foldmethod=syntax
