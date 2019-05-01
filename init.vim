@@ -1,11 +1,14 @@
 " Include vim stuff
-:if filereadable( "/home/joseriosneto/.vimrc" )
+if filereadable("/home/joseriosneto/.vimrc")
    source /home/joseriosneto/.vimrc
-:endif
+endif
 
 set rtp^=/usr/share/vim/vimfiles/
 
 """"""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
+" Shows result of substitute when typing
+set inccommand=nosplit
+
 " Quickly edit/source init.vim
 nnoremap <Leader>ei :vsp ~/.vim/init.vim<CR>
 nnoremap <Leader>si :source ~/.vim/init.vim<CR>
