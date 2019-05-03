@@ -41,6 +41,34 @@ inoremap <leader>d <esc>ddi
 nnoremap <leader>ev :vsp $HOME/.vimrc<CR>
 nnoremap <leader>sv :source $HOME/.vimrc<CR>
 
+""""""" Editing
+
+augroup CommentMappings
+    au!
+    " The following is not ideal yet, especially when the block begins (ie, `<)
+    " more to the right than where it ends (ie, `>). So, for example:
+    "
+    "    return;
+    " }
+    "
+    " If the block starts on the 'r' and ends right after the '}', then running
+    " the map will generate the following incorrect comments:
+    "
+    "  // return
+    " }//
+    "
+    " NOTE:
+    "   I tried using ^V but that didn't work. CTRL-Q also starts
+    "   blockwise mode and it works fine here.
+    "
+    "   I got the cmd values typing CTRL-Q followed by another control cmd
+    "   in ins-mode.
+    au FileType c,cpp :nnoremap <C-s> I// <esc>
+    au FileType c,cpp :vnoremap <C-s> <esc>`<I<esc>l`>I// <esc>
+    au FileType python :nnoremap <C-s> I# <esc>
+    au FileType python :vnoremap <C-s> <esc>`<I<esc>l`>I# <esc>
+augroup end
+
 """"""" Searching
 set ignorecase
 set smartcase  " note: it needs ignorecase on
@@ -53,7 +81,7 @@ set wildmode=list:full
 nnoremap <silent> <C-l> :nohl<CR>
 
 " Highlight word without searching
-:nnoremap <buffer> <space> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap <buffer> <space> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 """"""" Tabulation
 set autoindent
