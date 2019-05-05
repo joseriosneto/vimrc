@@ -18,6 +18,13 @@ iabbrev ifeif if () {<cr>} else if () {<cr>}
 iabbrev fori for (int i = 0; i < 1000; ++i) {<cr>}
 iabbrev forj for (int j = 0; j < 1000; ++j) {<cr>}
 
+" Operator pending map to visually select the content inside
+" the next/prev parenthesis, brackets, etc.
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap in) :<c-u>normal! F)hvi(<cr>
+onoremap in[ :<c-u>normal! f[vi[<cr>
+onoremap in] :<c-u>normal! F]vi[<cr>
+
 """"""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
 let mapleader = ","
 syntax on
