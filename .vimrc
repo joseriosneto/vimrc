@@ -38,8 +38,8 @@ inoremap <esc> <nop>
 inoremap <leader>d <esc>ddi
 
 " Quickly open/source vimrc
-nnoremap <leader>ev :vsp $HOME/.vimrc<CR>
-nnoremap <leader>sv :source $HOME/.vimrc<CR>
+nnoremap <silent> <leader>ev :vsp $HOME/.vimrc<CR>
+nnoremap <silent> <leader>sv :source $HOME/.vimrc<CR>
 
 """"""" Editing
 
