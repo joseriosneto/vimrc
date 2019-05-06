@@ -20,10 +20,10 @@ iabbrev forj for (int j = 0; j < 1000; ++j) {<cr>}
 
 " Operator pending map to visually select the content inside
 " the next/prev parenthesis, brackets, etc.
-onoremap in( :<c-u>normal! f(vi(<cr>
-onoremap in) :<c-u>normal! F)hvi(<cr>
-onoremap in[ :<c-u>normal! f[vi[<cr>
-onoremap in] :<c-u>normal! F]vi[<cr>
+onoremap in( :<c-u>execute "normal! /(\r:noh\rlvi("<cr>
+onoremap in) :<c-u>execute "normal! ?)\r:noh\rhvi("<cr>
+onoremap in[ :<c-u>execute "normal! /[\r:noh\rlvi["<cr>
+onoremap in] :<c-u>execute "normal! ?]\r:noh\rhvi["<cr>
 
 """"""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
 let mapleader = ","
