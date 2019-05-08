@@ -49,6 +49,7 @@ nnoremap <silent> <leader>ev :vsp $HOME/.vimrc<CR>
 nnoremap <silent> <leader>sv :source $HOME/.vimrc<CR>
 
 """"""" Editing
+filetype on " some things below rely on filetype detection
 
 augroup CommentMappings
     au!
@@ -115,13 +116,6 @@ nnoremap <Right> :tabnext<CR>
 set laststatus=2
 set ruler           " cursor current position in status line
 set cc=80
-
-" Spell checker for *.txt,*md files
-filetype on
-augroup spell_check
-    autocmd!
-    au FileType text,markdown :setlocal spell spelllang=en_us
-augroup end
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
