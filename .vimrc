@@ -13,10 +13,16 @@ inoremap <left>  <nop>
 inoremap <right> <nop>
 
 """"""""""""""""""""""" EXPERIMENTAL""""""""""""""""""""""""
+" C-like languges
 iabbrev ife if () {<cr>} else {<cr>}
 iabbrev ifeif if () {<cr>} else if () {<cr>}
 iabbrev fori for (int i = 0; i < 1000; ++i) {<cr>}
 iabbrev forj for (int j = 0; j < 1000; ++j) {<cr>}
+
+" Assembly
+iabbrev assbprp push %rbp<cr>mov %rsp, %rbp<cr><cr>
+iabbrev assret mov %rbp, %rsp<cr>pop %rbp<cr>ret<cr>
+iabbrev assexit mov $SYS_EXIT, %rax<cr>mov $SYS_EXIT_SUCCESS, %rdi<cr>syscall<cr>
 
 " Operator pending map to visually select the content inside
 " the next/prev parenthesis, brackets, etc.
