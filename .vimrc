@@ -30,7 +30,8 @@ let mapleader = ","
 syntax on
 set nonumber
 set nowrap
-set background=light
+" set background=light
+set background=dark
 " set cursorline " highlight current line
 set scrolloff=6 " scrolls when cursor gets 6 lines close to top/bottom edges
 set sidescrolloff=6 " scrolls when cursor gets 6 lines close to left/right edges
