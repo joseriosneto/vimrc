@@ -52,6 +52,16 @@ nnoremap <silent> <leader>sv :source $HOME/.vimrc<CR>
 """"""" Editing
 filetype on " some things below rely on filetype detection
 
+augroup IncludeAutoCompletion
+    au!
+    " This is to enable the use of ins-completion for assembly files.
+    " Remembering that for FileType events, the pattern matches the
+    " new filetype, not the suffix in the file. For example, assembly
+    " files have a ".s" suffix whereas vim sets the filetype to "asm".
+    " Pattern matches on the latter.
+    au FileType asm set include=^\\s*\\.include
+augroup end
+
 augroup CommentMappings
     au!
     " The following is not ideal yet, especially when the block begins (ie, `<)
