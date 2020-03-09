@@ -31,6 +31,20 @@ onoremap in) :<c-u>execute "normal! ?)\r:noh\rhvi("<cr>
 onoremap in[ :<c-u>execute "normal! /[\r:noh\rlvi["<cr>
 onoremap in] :<c-u>execute "normal! ?]\r:noh\rhvi["<cr>
 
+" The following is a function to vertical find files, pretty much like
+" "sfind" but vertical instead.
+"
+" For future reads, ":help command" was very helpful.
+"   -complete: tells how vim should suggest completions for this new cmd.
+function! VFind( filename )
+    let s:file = findfile( a:filename )
+    if s:file != ""
+        execute "rightbelow vsp " . s:file
+    endif
+endfunction
+command! -nargs=1 -complete=file_in_path Vfind :call VFind( "<args>" )
+cabbrev vfind Vfind
+
 """"""""""""""""""""""" BASIC """"""""""""""""""""""""""""""
 let mapleader = ","
 syntax on
